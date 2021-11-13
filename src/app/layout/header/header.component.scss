@@ -1,0 +1,76 @@
+@import "../../../assets/sass/variables";
+
+$top-nav-background-color: #FFFFFF;
+
+.header-container {
+  position: fixed;
+  background-color: #FFFFFF;
+  border-bottom: 1px #989898 solid;
+  box-shadow: 0 0 10px;
+  width: 100%;
+  z-index: 9999;
+
+  .header-content-container {
+    // background-color: $top-nav-background-color;
+    margin: auto;
+    width: $screen-content-area-width;
+    display: grid;
+    gap: 5px;
+    height: 65px;
+    grid-template-areas:
+      "logo"
+      "home"
+      "account"
+      "logout";
+
+    @media (min-width: 500px) {
+      gap: 20px;
+      grid-template-columns: 12fr 1fr 1fr 1fr;
+      grid-template-areas:
+        "logo home account logout";
+    }
+    
+    .header-logo {
+      grid-area: logo;
+      // background-color: lightgreen;
+      padding: 15px 15px 5px 15px;
+    
+      img {
+        height: 40px;
+      }
+    }
+
+    .header-link {
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:18px;
+    
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
+    
+      button {
+        font-size: 18px;
+      }
+    
+      &.home {
+        grid-area: home;
+        // background-color: lightblue;
+      }
+    
+      &.account {
+        grid-area: account;
+        // background-color: lightgreen;
+      }
+    
+      &.logout {
+        grid-area: logout;
+        // background-color: lightblue;
+      }
+    
+    }
+  }
+}

@@ -1,0 +1,25 @@
+// this :host declaration has to live here so 
+// the :host pseudo element is correctly scoped.
+
+// Assigning it from an individual scss
+// file doesn't seem to work.
+
+// all other modal related styles live in 
+//  src/assets/sass/_modal.scss
+:host {
+  background-color: rgba( 0, 0, 0, 0.85 );
+  bottom: 0px;
+  cursor: pointer;
+  display: flex;
+  left: 0px;
+  overflow: auto;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 100;
+
+  @media (screen), (orientation:portrait) { 
+    display: block;
+  }
+}
+

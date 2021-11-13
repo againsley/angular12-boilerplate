@@ -1,0 +1,32 @@
+<!-- If logged in show all application content -->
+<div  *ngIf="isLoggedIn">
+
+  <!-- Header -->
+  <div class="main-head">
+    <app-header></app-header>
+  </div>
+
+  <!-- Page wrapper is for CSS Grid to manage layout -->
+  <div class="page-wrapper">
+
+    <!-- Side nav -->
+    <aside class="sidebar-left">
+      <app-sidebar></app-sidebar>
+    </aside>
+
+    <!-- Page content -->
+    <article class="content">
+      <router-outlet></router-outlet>
+    </article>
+
+  </div>
+  
+</div>
+
+<!-- If not logged in, only show login component -->
+<div *ngIf="!isLoggedIn">
+  <app-login></app-login>
+</div>
+
+<!-- Auxiliary modal outlet -->
+<router-outlet name="modal"></router-outlet>

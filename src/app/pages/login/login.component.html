@@ -1,0 +1,28 @@
+<div class="login-form-container">
+
+  <div class="login-form">
+    <h1>Task Minder Login</h1>
+
+    
+
+    <div class="input-container">
+      <label hidden for="email">Email: </label>
+      <input id="email" type="text" [formControl]="email" placeholder="Email">
+    </div>
+    <div class="input-container">
+      <label hidden for="password">Password: </label>
+      <input id="password" type="text" [formControl]="password" placeholder="Password">
+    </div>
+    <div class="input-container">
+      <button class="solid round" (click)="submit_login()">Login</button>
+    </div>
+    <!-- <span class="reset-link" (click)="triggerPasswordReset()">
+      Forgot your password?
+    </span> -->
+
+    <a [routerLink]="[ '/reset-password' ]">
+      Forgot your password?
+    </a>
+  </div>
+
+</div>

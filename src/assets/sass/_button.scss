@@ -1,0 +1,21 @@
+button {
+  background-color: #FFFFFF;
+  border-color: $tm-main-purple;
+  border-radius: 0;
+  
+  border-style: solid;
+  cursor: pointer;
+
+  font-family: Helvetica;
+
+  padding: 6px 12px;
+
+  &.solid {
+    background-color: $tm-main-purple;
+    color: #FFFFFF;
+  }
+
+  &.round {
+    border-radius: 100px;
+  }
+}
