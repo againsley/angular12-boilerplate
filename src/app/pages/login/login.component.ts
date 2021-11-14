@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms'; 
 
+import { ProjectConfigService } from '../../services/project-config.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,10 +10,15 @@ import { FormControl } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  applicationTitle:string;
   email = new FormControl('');
   password = new FormControl('');
 
-  constructor() { }
+  constructor(
+    projectConfig: ProjectConfigService
+  ) {
+    this.applicationTitle = projectConfig.applicationTitle;
+  }
 
   ngOnInit(): void {
   }
