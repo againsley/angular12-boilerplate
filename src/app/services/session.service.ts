@@ -14,44 +14,49 @@ export class SessionService {
 
   checkAuthentication(): void {
 
-    // Make sure the token exists
-    const token = localStorage.getItem('token');
-    if ( !token ) {
-      console.error('No token found');
-      this.setIsLoggedIn(false);
-      return;
-    }
-
-    // Make sure the token is not empty
-    const tokenPayload:any = decode(token);
-    if ( !tokenPayload ) {
-      console.error('No token payload');
-      localStorage.removeItem('token');
-      this.setIsLoggedIn(false);
-      return;
-    }
-
-    // Check for expired JWT token
-    const tokenExpiresAt = tokenPayload.exp * 1000;
-    const now = Date.now();
-    if ( tokenExpiresAt <= now ) {
-      console.error('Token expired');
-      this.logout();
-      return;
-    }
-
-    // Make sure we have an email in the token
-    if ( tokenPayload.userEmail ) {
-      this.setSessionData({ 
-        userEmail: tokenPayload.userEmail
-      });
-      this.setIsLoggedIn(true);
-      return;
-    }
-
-    console.error('Default token fail');
-    this.setIsLoggedIn(false);
+    // For testing purposes only, this overrides auth
+    this.setIsLoggedIn(true);
     return;
+    
+
+    // // Make sure the token exists
+    // const token = localStorage.getItem('token');
+    // if ( !token ) {
+    //   console.error('No token found');
+    //   this.setIsLoggedIn(false);
+    //   return;
+    // }
+
+    // // Make sure the token is not empty
+    // const tokenPayload:any = decode(token);
+    // if ( !tokenPayload ) {
+    //   console.error('No token payload');
+    //   localStorage.removeItem('token');
+    //   this.setIsLoggedIn(false);
+    //   return;
+    // }
+
+    // // Check for expired JWT token
+    // const tokenExpiresAt = tokenPayload.exp * 1000;
+    // const now = Date.now();
+    // if ( tokenExpiresAt <= now ) {
+    //   console.error('Token expired');
+    //   this.logout();
+    //   return;
+    // }
+
+    // // Make sure we have an email in the token
+    // if ( tokenPayload.userEmail ) {
+    //   this.setSessionData({ 
+    //     userEmail: tokenPayload.userEmail
+    //   });
+    //   this.setIsLoggedIn(true);
+    //   return;
+    // }
+
+    // console.error('Default token fail');
+    // this.setIsLoggedIn(false);
+    // return;
   }
 
   logout() {

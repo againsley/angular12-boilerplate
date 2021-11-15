@@ -66,13 +66,6 @@ const routes: Routes = [
   //   ]
   // },
 
-  
-
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-
   {
     path: 'signup',
     component: SignupComponent
@@ -83,6 +76,8 @@ const routes: Routes = [
     canActivate: [RouteGuardService],
     component: AccountComponent
   },
+
+  { path: '**',   redirectTo: ''},
 
 ];
 
