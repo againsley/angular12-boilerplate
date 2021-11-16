@@ -1,6 +1,6 @@
 button {
   background-color: #FFFFFF;
-  border-color: $tm-main-purple;
+  border-color: $theme-main-color;
   border-radius: 0;
   
   border-style: solid;
@@ -11,7 +11,7 @@ button {
   padding: 6px 12px;
 
   &.solid {
-    background-color: $tm-main-purple;
+    background-color: $theme-main-color;
     color: #FFFFFF;
   }
 

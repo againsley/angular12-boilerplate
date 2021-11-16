@@ -1,9 +1,16 @@
 body {
+  background-color: $global-background-color;
   font-family: Helvetica;
   margin: 0;
 
+  p {
+    
+  }
+
   h1 {
+    color: $theme-main-color;
     margin: 0;
+    font-size: 2.5em;
   }
 }
 

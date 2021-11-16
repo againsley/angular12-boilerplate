@@ -13,7 +13,7 @@ $top-nav-background-color: #FFFFFF;
   .header-content-container {
     // background-color: $top-nav-background-color;
     margin: auto;
-    width: $screen-content-area-width;
+    max-width: $screen-content-area-width;
     display: grid;
     gap: 5px;
     height: 65px;

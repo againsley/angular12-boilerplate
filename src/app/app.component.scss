@@ -43,13 +43,13 @@
 
   .sidebar-left {
     grid-area: sidebar;
-    background-color: $tm-main-purple;
+    background-color: $theme-main-color;
     margin-top: 65px;
   }
 
   .content {
     grid-area: content;
     margin-top: 65px;
-    padding: 30px;
+    padding: 80px;
   }
 }
